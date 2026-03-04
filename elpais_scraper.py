@@ -33,9 +33,8 @@ BS_USERNAME = os.getenv("BROWSERSTACK_USERNAME", "YOUR_BS_USERNAME")
 BS_ACCESS_KEY = os.getenv("BROWSERSTACK_ACCESS_KEY", "YOUR_BS_ACCESS_KEY")
 BS_HUB_URL = f"https://{BS_USERNAME}:{BS_ACCESS_KEY}@hub-cloud.browserstack.com/wd/hub"
 
-RAPID_API_KEY = os.getenv("RAPID_API_KEY", "")         # RapidAPI key for translation
-GOOGLE_TRANSLATE_KEY = os.getenv("GOOGLE_TRANSLATE_KEY", "")  # Or Google Translate API key
-
+RAPID_API_KEY = os.getenv("RAPID_API_KEY", "")        
+GOOGLE_TRANSLATE_KEY = os.getenv("GOOGLE_TRANSLATE_KEY", "")  
 STOP_WORDS = {
     "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
     "of", "with", "by", "is", "are", "was", "were", "be", "been", "being",
@@ -176,7 +175,6 @@ def translate(text: str) -> str:
     return translate_free_fallback(text)
 
 
-# ─── Image Download Helper ──────────────────────────────────────────────────────
 
 def download_image(url: str, filename: str) -> bool:
     """Download an image from URL and save to IMAGES_DIR."""
